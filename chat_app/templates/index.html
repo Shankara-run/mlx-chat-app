@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLX Chat App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>MLX Chat App</h1>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="chat">Chat</button>
+            <button class="tab-button" data-tab="notes">Notes</button>
+        </div>
+        <div id="chat-tab" class="tab-content active">
+            <div id="chat-container">
+                <!-- Messages will be appended here -->
+            </div>
+        <div class="input-container">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <div id="notes-tab" class="tab-content">
+        <h2>Notes</h2>
+        <textarea id="notes-textarea" placeholder="Write your notes here..."></textarea>
+        <button id="save-notes-button">Save Note</button>
+        <div id="notes-list"></div>
+    </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
